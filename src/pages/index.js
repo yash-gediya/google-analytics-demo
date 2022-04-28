@@ -25,7 +25,7 @@ const IndexPage = () => (
       <Link to="/using-ssr">Go to "Using SSR"</Link> <br />
       <Link to="/using-dsg">Go to "Using DSG"</Link>
     </p>
-    <button>Click this button</button>
+    <button className="call-to-action">Click this button</button>
   </Layout>
 )
 
