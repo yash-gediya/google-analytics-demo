@@ -7,10 +7,6 @@ import Seo from "../components/seo"
 import axios from "axios"
 
 const IndexPage = () => {
-  axios.get("https://jsonplaceholder.typicode.com/users").then(response => {
-    console.log(response.data)
-  })
-
   const handleClickEvent = e => {
     e.preventDefault()
     window.dataLayer = window.dataLayer || []
@@ -21,6 +17,18 @@ const IndexPage = () => {
       lable: "Google Analytics Custom Button",
     })
   }
+  const handleSubmit = e => {
+    axios
+      .get("https://jsonplaceholder.typicode.com/users")
+      .then(response => {
+        console.log(response.data)
+        handleClickEvent(e)
+      })
+      .catch(error => {
+        console.log(error)
+      })
+  }
+
   return (
     <Layout>
       <Seo title="Home" />
@@ -41,7 +49,7 @@ const IndexPage = () => {
         <Link to="/using-ssr">Go to "Using SSR"</Link> <br />
         <Link to="/using-dsg">Go to "Using DSG"</Link>
       </p>
-      <button className="call-to-action" onClick={handleClickEvent}>
+      <button className="call-to-action" onClick={handleSubmit}>
         Click this button
       </button>
     </Layout>
