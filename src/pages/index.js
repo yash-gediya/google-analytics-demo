@@ -19,7 +19,7 @@ const IndexPage = () => {
   }
   const handleSubmit = e => {
     axios
-      .get("https://jsonplaceholder.typicode.com/users")
+      .get("https://jsonplaceholder.typicode.com/user")
       .then(response => {
         console.log(response.data)
         handleClickEvent(e)
