@@ -19,7 +19,7 @@ const IndexPage = () => {
   }
   const handleSubmit = e => {
     axios
-      .get("https://jsonplaceholder.typicode.com/users")
+      .get("https://jsonplaceholder.typicode.com/user")
       .then(response => {
         console.log(response.data)
         handleClickEvent(e)
@@ -28,7 +28,6 @@ const IndexPage = () => {
         console.log(error)
       })
   }
-
   return (
     <Layout>
       <Seo title="Home" />
@@ -52,6 +51,7 @@ const IndexPage = () => {
       <button className="call-to-action" onClick={handleSubmit}>
         Click this button
       </button>
+      {}
     </Layout>
   )
 }
