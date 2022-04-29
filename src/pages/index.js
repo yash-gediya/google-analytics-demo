@@ -33,7 +33,7 @@ const IndexPage = () => (
         window.dataLayer.push({
           event: "buttonClick",
           category: "Custom Button",
-          action: "onClick",
+          action: "click",
           lable: "Google Analytics Custom Button",
         })
       }}
