@@ -25,7 +25,21 @@ const IndexPage = () => (
       <Link to="/using-ssr">Go to "Using SSR"</Link> <br />
       <Link to="/using-dsg">Go to "Using DSG"</Link>
     </p>
-    <button className="call-to-action">Click this button</button>
+    <button
+      className="call-to-action"
+      onClick={e => {
+        e.preventDefault()
+        window.dataLayer = window.dataLayer || []
+        window.dataLayer.push({
+          event: "buttonClick",
+          category: "Custom Button",
+          action: "click",
+          lable: "Google Analytics Custom Button",
+        })
+      }}
+    >
+      Click this button
+    </button>
   </Layout>
 )
 
