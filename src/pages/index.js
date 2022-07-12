@@ -32,6 +32,18 @@ const IndexPage = () => {
   return (
     <Layout>
       <Seo title="Home" />
+      <Helmet>
+        {/* <!-- Global site tag (gtag.js) - Google Analytics --> */}
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-97NGVQTB02"
+        ></script>
+        <script>
+          window.dataLayer = window.dataLayer || []; function gtag()
+          {dataLayer.push(arguments)}
+          gtag('js', new Date()); gtag('config', 'G-97NGVQTB02');
+        </script>
+      </Helmet>
       <h1>Hi people</h1>
       <p>Welcome to your new Gatsby site.</p>
       <p>Now go build something great.</p>
@@ -53,18 +65,6 @@ const IndexPage = () => {
         Click this button
       </button>
       {}
-      <Helmet>
-        {/* <!-- Global site tag (gtag.js) - Google Analytics --> */}
-        <script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-97NGVQTB02"
-        ></script>
-        <script>
-          window.dataLayer = window.dataLayer || []; function gtag()
-          {dataLayer.push(arguments)}
-          gtag('js', new Date()); gtag('config', 'G-97NGVQTB02');
-        </script>
-      </Helmet>
     </Layout>
   )
 }
