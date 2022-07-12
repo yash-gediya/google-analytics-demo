@@ -5,6 +5,7 @@ import { StaticImage } from "gatsby-plugin-image"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import axios from "axios"
+import Helmet from "react-helmet"
 
 const IndexPage = () => {
   const handleClickEvent = e => {
@@ -52,6 +53,18 @@ const IndexPage = () => {
         Click this button
       </button>
       {}
+      <Helmet>
+        {/* <!-- Global site tag (gtag.js) - Google Analytics --> */}
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-97NGVQTB02"
+        ></script>
+        <script>
+          window.dataLayer = window.dataLayer || []; function gtag()
+          {dataLayer.push(arguments)}
+          gtag('js', new Date()); gtag('config', 'G-97NGVQTB02');
+        </script>
+      </Helmet>
     </Layout>
   )
 }
