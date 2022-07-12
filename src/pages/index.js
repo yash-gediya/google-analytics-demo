@@ -8,7 +8,7 @@ import axios from "axios"
 
 const IndexPage = () => {
   const handleClickEvent = e => {
-    e.preventDefault()
+    // e.preventDefault()
     window.dataLayer = window.dataLayer || []
     window.dataLayer.push({
       event: "buttonClick",
