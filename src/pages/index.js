@@ -8,22 +8,22 @@ import axios from "axios"
 import Helmet from "react-helmet"
 
 const IndexPage = () => {
-  // const handleClickEvent = e => {
-  //   e.preventDefault()
-  //   window.dataLayer = window.dataLayer || []
-  //   window.dataLayer.push({
-  //     event: "buttonClick",
-  //     category: "Custom Button",
-  //     action: "click",
-  //     lable: "Google Analytics Custom Button",
-  //   })
-  // }
+  const handleClickEvent = e => {
+    e.preventDefault()
+    window.dataLayer = window.dataLayer || []
+    window.dataLayer.push({
+      event: "buttonClick",
+      category: "Custom Button",
+      action: "click",
+      lable: "Google Analytics Custom Button",
+    })
+  }
   const handleSubmit = e => {
     axios
       .get("https://jsonplaceholder.typicode.com/users")
       .then(response => {
         console.log(response.data)
-        // handleClickEvent(e)
+        handleClickEvent(e)
       })
       .catch(error => {
         console.log(error)
