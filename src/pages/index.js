@@ -8,22 +8,22 @@ import axios from "axios"
 import Helmet from "react-helmet"
 
 const IndexPage = () => {
-  const handleClickEvent = e => {
-    e.preventDefault()
-    window.dataLayer = window.dataLayer || []
-    window.dataLayer.push({
-      event: "buttonClick",
-      category: "Custom Button",
-      action: "click",
-      lable: "Google Analytics Custom Button",
-    })
-  }
+  // const handleClickEvent = e => {
+  //   e.preventDefault()
+  //   window.dataLayer = window.dataLayer || []
+  //   window.dataLayer.push({
+  //     event: "buttonClick",
+  //     category: "Custom Button",
+  //     action: "click",
+  //     lable: "Google Analytics Custom Button",
+  //   })
+  // }
   const handleSubmit = e => {
     axios
       .get("https://jsonplaceholder.typicode.com/users")
       .then(response => {
         console.log(response.data)
-        handleClickEvent(e)
+        // handleClickEvent(e)
       })
       .catch(error => {
         console.log(error)
@@ -32,18 +32,6 @@ const IndexPage = () => {
   return (
     <Layout>
       <Seo title="Home" />
-      <Helmet>
-        {/* <!-- Global site tag (gtag.js) - Google Analytics --> */}
-        <script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-97NGVQTB02"
-        ></script>
-        <script>
-          window.dataLayer = window.dataLayer || []; function gtag()
-          {dataLayer.push(arguments)}
-          gtag('js', new Date()); gtag('config', 'G-97NGVQTB02');
-        </script>
-      </Helmet>
       <h1>Hi people</h1>
       <p>Welcome to your new Gatsby site.</p>
       <p>Now go build something great.</p>
